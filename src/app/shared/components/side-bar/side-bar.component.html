@@ -1,0 +1,34 @@
+<!-- ! div principal del menu lateral -->
+<div class="side-bar">
+    <!-- ! Icono ... -->
+    <div><i class="uil uil-ellipsis-h"></i></div>
+    <!-- ! Lista de la primera seccion  -->
+    <ul class="side-bar__list list-one">
+        <!-- **ngFor=" " es una propiedad de angular que recorre todos los datos que contiente el objeto señalado 
+            let item of mainMenu.defaultOptions indica que para la variable item guardar o recorrer 
+            todos los datos del objeto mainMenu.defaultOptions  -->
+        <li *ngFor="let item of mainMenu.defaultOptions">
+            <div class="list-wrapper-item">
+                <i [ngClass]="['uil',item.icon]"></i> <!-- [ngClass] es una propiedad de angular que permite tomar el nombre de la clase almacenada en una variable y adjuntarla-->
+                <span class="side-bar__list list-label">{{item.name}}</span>
+            </div>
+        </li>
+    </ul>
+    <div class="side-bar__separator"></div>
+    <ul class="side-bar__list list-two">
+        <li *ngFor="let item of mainMenu.accessLink">
+            <div class="list-wrapper-item">
+                <i [ngClass]="['uil',item.icon]"></i>
+                <span class="side-bar__list list-label">{{item.name}}</span>
+            </div>
+        </li>
+    </ul>
+    <div class="side-bar__separator line-separator"></div>
+    <ul class="side-bar__list list-three">
+        <li *ngFor="let item of customOptions">
+            <div class="list-wrapper-item">
+                <span class="side-bar__list list-label">{{item.name}}</span>
+            </div>
+        </li>
+    </ul>
+</div>
